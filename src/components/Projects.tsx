@@ -5,7 +5,7 @@ const Projects = () => {
     {
       title: "Reload Simulator (Lexington Medical)",
       subtitle: "Designed and validated a reload simulator fixture saving $140,000 USD per DV test.",
-      image: "/lovable-uploads/db411516-f38f-4da7-8ec4-2c9ae4721f61.png",
+      image: "lovable-uploads/db411516-f38f-4da7-8ec4-2c9ae4721f61.png",
       tags: ["CAD", "Engineering Drawings", "Documentation", "ECO", "PID", "Coding", "Prototyping"],
       projectUrl: "/project-1",
       disabled: false
@@ -13,7 +13,7 @@ const Projects = () => {
     {
       title: "Automated Latte Cafe", 
       subtitle: "Designed an autonomous robotic barista system that takes and executes orders.",
-      image: "/lovable-uploads/58c13c03-c183-4384-90e0-c85e2956ed75.png",
+      image: "lovable-uploads/58c13c03-c183-4384-90e0-c85e2956ed75.png",
       tags: ["PID", "Cross-Functional Work", "Prototyping", "Robotics", "Micro-controllers", "Team Collaboration"],
       projectUrl: "/project-2",
       disabled: false
@@ -21,7 +21,7 @@ const Projects = () => {
     {
       title: "3DoF Robotic Arm Elevator",
       subtitle: "A 3-DoF robotic elevator that keeps its platform level while moving vertically, controlled with Python and LabVIEW.",
-      image: "/lovable-uploads/4d253728-54a7-4003-a499-805fc58b44ef.png",
+      image: "lovable-uploads/4d253728-54a7-4003-a499-805fc58b44ef.png",
       tags: ["LabVIEW", "Inverse Kinematics", "Python", "PID"],
       projectUrl: "/project-3",
       disabled: false
@@ -29,7 +29,7 @@ const Projects = () => {
     {
       title: "Building a Tricycle",
       subtitle: "A collaborative engineering project to design and build a tricycle capable of navigating through a dimensional archway during competition.",
-      image: "/lovable-uploads/163f0b21-bc2c-4059-b32e-b97db3f516da.png",
+      image: "lovable-uploads/163f0b21-bc2c-4059-b32e-b97db3f516da.png",
       tags: ["Welding", "Mechanical Design", "Force Distribution", "Woodworking"],
       projectUrl: "/project-4",
       disabled: false
@@ -37,7 +37,7 @@ const Projects = () => {
     {
       title: "Robot Car: Autonomously Controlled",
       subtitle: "Autonomous robot car that communicates with other robots to coordinate and execute tasks as a team.",
-      image: "/lovable-uploads/5b8c4b42-c210-4a1c-884c-746ddd8bd43f.png",
+      image: "lovable-uploads/5b8c4b42-c210-4a1c-884c-746ddd8bd43f.png",
       tags: ["Raspberry Pi", "Python", "Coding", "Design", "Sensors"],
       projectUrl: "/project-5",
       disabled: false
@@ -45,7 +45,7 @@ const Projects = () => {
     {
       title: "Autonomous Maze Exploration with Object Recognition",
       subtitle: "Teaching a robot to recognize objects and navigate mazes autonomously using ROS and machine learning.",
-      image: "/lovable-uploads/caccaaaa-cb02-4d05-bd99-1f3a987d4ed0.png",
+      image: "lovable-uploads/caccaaaa-cb02-4d05-bd99-1f3a987d4ed0.png",
       tags: ["ROS", "Machine Learning", "Object Recognition", "PID Control"],
       projectUrl: "/project-6",
       disabled: false
@@ -53,7 +53,7 @@ const Projects = () => {
     {
       title: "Fingerprint Locked Snack Box",
       subtitle: "A prototype fingerprint-secured storage box with temperature and location monitoring for communal spaces.",
-      image: "/lovable-uploads/074bdc4e-efe8-4020-b28d-63b09a0ca5b7.png",
+      image: "lovable-uploads/074bdc4e-efe8-4020-b28d-63b09a0ca5b7.png",
       tags: ["Sensors", "ESP32", "CAD", "Team Collaboration"],
       projectUrl: "/project-7",
       disabled: false
@@ -61,7 +61,7 @@ const Projects = () => {
     {
       title: "Line Follower: Image Processing vs Color Sensor",
       subtitle: "A comparison of two line-following robots: one using camera-based image processing and the other using a color sensor for line detection.",
-      image: "/lovable-uploads/461df0d3-f6ab-4eca-bd0c-b6d053acab8a.png",
+      image: "lovable-uploads/461df0d3-f6ab-4eca-bd0c-b6d053acab8a.png",
       tags: ["PID Control", "Color Sensor Calibration", "Circuit Design", "Autonomous Navigation"],
       projectUrl: "/project-8",
       disabled: false
