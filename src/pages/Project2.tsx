@@ -3,6 +3,7 @@ import { useEffect } from "react";
 import { ArrowLeft, Github, ExternalLink, Calendar, Users, Cog } from "lucide-react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import { asset } from "@/utils/asset";
 
 const Project2 = () => {
   useEffect(() => {
@@ -71,7 +72,7 @@ const Project2 = () => {
             <div className="max-w-6xl mx-auto">
               <div className="aspect-video bg-muted rounded-lg overflow-hidden animate-slide-up">
                 <img 
-                  src="/lovable-uploads/58c13c03-c183-4384-90e0-c85e2956ed75.png"
+                  src={asset("lovable-uploads/58c13c03-c183-4384-90e0-c85e2956ed75.png")}
                   alt="Automated Latte Cafe robotic barista system showing multiple stations"
                   className="w-full h-full object-cover"
                 />
@@ -169,7 +170,7 @@ const Project2 = () => {
                 
                 <div className="mb-8">
                   <img 
-                    src="/lovable-uploads/27f573a7-c738-447e-bc18-438809185daa.png"
+                    src={asset("lovable-uploads/27f573a7-c738-447e-bc18-438809185daa.png")}
                     alt="Coffee machine mechanism with precise pod insertion system"
                     className="w-full rounded-lg"
                   />
@@ -181,7 +182,7 @@ const Project2 = () => {
 
                 <div className="mb-8">
                   <img 
-                    src="/lovable-uploads/2dd3385a-fddd-4a08-b3bd-7d47fb10e770.png"
+                    src={asset("lovable-uploads/2dd3385a-fddd-4a08-b3bd-7d47fb10e770.png")}
                     alt="3D printed rail mechanism for precise coffee pod movement"
                     className="w-full rounded-lg"
                   />
