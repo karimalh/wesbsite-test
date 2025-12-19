@@ -1,6 +1,8 @@
 import { ArrowLeft } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useEffect } from "react";
+import { asset } from "@/utils/asset";
+
 
 const Project8 = () => {
   useEffect(() => {
@@ -68,7 +70,7 @@ const Project8 = () => {
               
               <div className="mb-8">
                 <img 
-                  src="/lovable-uploads/461df0d3-f6ab-4eca-bd0c-b6d053acab8a.png" 
+                  src={asset("lovable-uploads/461df0d3-f6ab-4eca-bd0c-b6d053acab8a.png")} 
                   alt="Color sensor line follower robot with purple and blue components on wooden chassis"
                   className="w-full rounded-lg shadow-md"
                 />
@@ -96,7 +98,7 @@ const Project8 = () => {
               <div className="grid md:grid-cols-2 gap-6 mb-8">
                 <div>
                   <img 
-                    src="/lovable-uploads/74e2178b-b320-4599-9ad8-501922b416b7.png" 
+                    src={asset("lovable-uploads/74e2178b-b320-4599-9ad8-501922b416b7.png")}
                     alt="Work-in-progress image processing line follower robot"
                     className="w-full rounded-lg shadow-md"
                   />
@@ -104,7 +106,7 @@ const Project8 = () => {
                 </div>
                 <div>
                   <img 
-                    src="/lovable-uploads/a6e8911f-1636-434c-bec4-4a9806ae315c.png" 
+                    src={asset("lovable-uploads/a6e8911f-1636-434c-bec4-4a9806ae315c.png")} 
                     alt="Final image processing line follower robot with camera mounted on top"
                     className="w-full rounded-lg shadow-md"
                   />
