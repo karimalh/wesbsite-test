@@ -2,6 +2,7 @@ import { ArrowLeft } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useEffect } from "react";
 import { Button } from "@/components/ui/button";
+import { asset } from "@/utils/asset";
 
 const Project5 = () => {
   useEffect(() => {
@@ -20,7 +21,7 @@ const Project5 = () => {
           {/* Hero image */}
           <div className="mb-12">
             <img 
-              src="/lovable-uploads/5b8c4b42-c210-4a1c-884c-746ddd8bd43f.png" 
+              src={asset("lovable-uploads/5b8c4b42-c210-4a1c-884c-746ddd8bd43f.png")} 
               alt="Robot Car: Autonomously Controlled"
               className="w-full h-[400px] object-cover rounded-lg"
             />
@@ -83,7 +84,7 @@ const Project5 = () => {
 
             <div className="mb-8">
               <img 
-                src="/lovable-uploads/edac7fff-cd33-40ac-90f8-725b9260c313.png" 
+                src={asset("lovable-uploads/edac7fff-cd33-40ac-90f8-725b9260c313.png")}
                 alt="3D-printed Support"
                 className="w-full max-w-md mx-auto rounded-lg"
               />
@@ -96,7 +97,7 @@ const Project5 = () => {
 
             <div className="mb-8">
               <img 
-                src="/lovable-uploads/9c0c2c18-34b4-4bfc-b994-49a0399d31f5.png" 
+                src={asset("lovable-uploads/9c0c2c18-34b4-4bfc-b994-49a0399d31f5.png")}
                 alt="Robot Car Electronics"
                 className="w-full rounded-lg"
               />
