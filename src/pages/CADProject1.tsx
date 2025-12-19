@@ -2,6 +2,8 @@ import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { ArrowLeft } from "lucide-react";
+import { asset } from "@/utils/asset";
+
 
 const CADProject1 = () => {
   useEffect(() => {
@@ -29,7 +31,7 @@ const CADProject1 = () => {
           <div className="max-w-4xl mx-auto">
             <div className="aspect-video mb-8 rounded-2xl overflow-hidden bg-muted">
               <img
-                src="/lovable-uploads/tooth-brush-hero.gif"
+                src={asset("/lovable-uploads/tooth-brush-hero.gif")}
                 alt="Electric Toothbrush CAD Animation"
                 className="w-full h-full object-cover"
                 loading="eager"
