@@ -55,7 +55,7 @@ const ProjectCard = ({
                   absolute inset-0
                   w-full h-full
                   object-contain
-                  p-6
+                  p-2
                   bg-muted
                   opacity-0
                   group-hover:opacity-100
