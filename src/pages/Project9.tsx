@@ -68,7 +68,7 @@ const Project9 = () => {
             <div className="mb-8">
               <img
                 loading="lazy"
-                src={asset("lovable-uploads/Penpal_main.png")}
+                src={asset("lovable-uploads/Penpal_main.jpeg")}
                 alt="Onshape Pen Pal automated pen dispenser prototype"
                 className="w-full rounded-lg shadow-md"
               />
