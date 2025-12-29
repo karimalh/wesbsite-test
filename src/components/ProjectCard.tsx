@@ -5,7 +5,7 @@ interface ProjectCardProps {
   title: string;
   subtitle: string;
   image?: string;
-  hoverImage?: string; // NEW: optional hover GIF/image
+  hoverImage?: string; // optional hover GIF/image
   bullets?: string[];
   tags?: string[];
   githubUrl?: string;
@@ -32,10 +32,11 @@ const ProjectCard = ({
         !disabled ? "hover-lift cursor-pointer" : "cursor-not-allowed opacity-75"
       }`}
     >
+      {/* IMAGE / GIF PREVIEW */}
       <div className="aspect-video bg-muted relative overflow-hidden flex items-center justify-center">
         {image ? (
           <>
-            {/* Default image */}
+            {/* Default static image */}
             <img
               src={image}
               alt={title}
@@ -45,12 +46,21 @@ const ProjectCard = ({
               loading="lazy"
             />
 
-            {/* Hover image / GIF */}
+            {/* Hover GIF (zoomed OUT, no crop) */}
             {hoverImage && (
               <img
                 src={hoverImage}
                 alt={`${title} preview animation`}
-                className="absolute inset-0 w-full h-full object-contain bg-muted opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                className="
+                  absolute inset-0
+                  w-full h-full
+                  object-contain
+                  p-6
+                  bg-muted
+                  opacity-0
+                  group-hover:opacity-100
+                  transition-opacity duration-300
+                "
                 loading="lazy"
               />
             )}
@@ -77,6 +87,7 @@ const ProjectCard = ({
         )}
       </div>
 
+      {/* CARD CONTENT */}
       <div className="p-6">
         <h3 className="heading-3 mb-2">{title}</h3>
         <p className="text-muted-foreground mb-4">{subtitle}</p>
@@ -137,7 +148,7 @@ const ProjectCard = ({
     </div>
   );
 
-  // If there's a project URL and not disabled, wrap in Link and enable group-hover
+  // Wrap card in Link when navigable (required for hover GIF)
   if (projectUrl && !disabled) {
     return (
       <Link to={projectUrl} className="block group">
