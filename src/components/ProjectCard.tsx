@@ -5,6 +5,7 @@ interface ProjectCardProps {
   title: string;
   subtitle: string;
   image?: string;
+  hoverImage?: string; // ← ADD THIS
   bullets?: string[];
   tags?: string[];
   githubUrl?: string;
