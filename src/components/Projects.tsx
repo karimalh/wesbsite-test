@@ -4,9 +4,11 @@ const Projects = () => {
   const projects = [
     {
       title: "Onshape Pen Pal",
-      description: "Automated pen dispenser + QR-based data collection (capstone).",
-      image: "lovable-uploads/pen-pal-hero.png",
-      link: "/project-9",
+      subtitle: "Automated pen dispenser + QR-based data collection (capstone).",
+      image: "lovable-uploads/Penpal_main.png",
+      tags: ["CAD", "Mechatronics", "System Integration", "Rapid Prototyping", "Raspberry Pi"],
+      projectUrl: "/project-9",
+      disabled: false
     },
 
     {
