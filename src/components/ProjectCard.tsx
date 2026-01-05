@@ -33,13 +33,19 @@ const ProjectCard = ({
       {/* IMAGE PREVIEW */}
       <div className="aspect-video bg-muted flex items-center justify-center">
         {image ? (
-          <img
-            src={image}
+          <img 
+            src={image} 
             alt={title}
             className="w-full h-full object-contain"
             loading="lazy"
           />
         ) : (
+          <div className="text-center p-8">
+            ...
+          </div>
+        )}
+      </div>
+
           <div className="text-center p-8">
             <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-3">
               <svg
