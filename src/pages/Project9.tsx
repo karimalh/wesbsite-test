@@ -126,7 +126,7 @@ const Project9 = () => {
                   loading="lazy"
                 />
                 <p className="text-sm text-muted-foreground mt-2 text-center">
-                  Robotic arm subsystem (Penpal_arm.jpeg)
+                  Robotic arm subsystem
                 </p>
               </div>
             </div>
@@ -148,7 +148,7 @@ const Project9 = () => {
                   loading="lazy"
                 />
                 <p className="text-sm text-muted-foreground mt-2 text-center">
-                  Structure + enclosure (Penpal_Structure.jpeg)
+                  Structure + enclosure
                 </p>
               </div>
             </div>
@@ -170,7 +170,7 @@ const Project9 = () => {
                   loading="lazy"
                 />
                 <p className="text-sm text-muted-foreground mt-2 text-center">
-                  Dispensing mechanism (Penpal_dispensing.jpeg)
+                  Dispensing mechanism
                 </p>
               </div>
             </div>
@@ -193,7 +193,7 @@ const Project9 = () => {
                   loading="lazy"
                 />
                 <p className="text-sm text-muted-foreground mt-2 text-center">
-                  Data pipeline & control flow (Penpal_data.jpeg)
+                  Data pipeline & control flow
                 </p>
               </div>
             </div>
