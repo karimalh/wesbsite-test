@@ -6,7 +6,6 @@ const Projects = () => {
       title: "Onshape Pen Pal",
       subtitle: "Automated pen dispenser + QR-based data collection (capstone).",
       image: "lovable-uploads/Penpal_main.png",
-      hoverImage: "lovable-uploads/penpal_gif.gif", // GIF on hover
       tags: ["CAD", "Mechatronics", "System Integration", "Rapid Prototyping", "Raspberry Pi"],
       projectUrl: "/project-9",
       disabled: false
