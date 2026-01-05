@@ -33,19 +33,13 @@ const ProjectCard = ({
       {/* IMAGE PREVIEW */}
       <div className="aspect-video bg-muted flex items-center justify-center">
         {image ? (
-          <img 
-            src={image} 
+          <img
+            src={image}
             alt={title}
             className="w-full h-full object-contain"
             loading="lazy"
           />
         ) : (
-          <div className="text-center p-8">
-            ...
-          </div>
-        )}
-      </div>
-
           <div className="text-center p-8">
             <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-3">
               <svg
@@ -62,7 +56,9 @@ const ProjectCard = ({
                 />
               </svg>
             </div>
-            <p className="text-sm text-muted-foreground">Project preview image</p>
+            <p className="text-sm text-muted-foreground">
+              Project preview image
+            </p>
           </div>
         )}
       </div>
@@ -128,7 +124,6 @@ const ProjectCard = ({
     </div>
   );
 
-  // Wrap card in Link when navigable
   if (projectUrl && !disabled) {
     return (
       <Link to={projectUrl} className="block">
