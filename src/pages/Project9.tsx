@@ -1,12 +1,20 @@
 import { ArrowLeft } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useEffect } from "react";
-import { asset } from "@/utils/asset";
 
 const Project9 = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+
+  // Use Vite's BASE_URL so assets work on GitHub Pages under a repo subpath
+  const base = import.meta.env.BASE_URL;
+  const img = (name: string) => `${base}lovable-uploads/${name}`;
+  const file = (name: string) => `${base}lovable-uploads/${name}`;
+
+  // Google Drive embed (use /preview, not /view)
+  const driveVideoPreview =
+    "https://drive.google.com/file/d/14hQnnbwrV7qgeh8xqUDztozsEBcEErVG/preview";
 
   return (
     <div className="min-h-screen bg-background">
@@ -43,37 +51,43 @@ const Project9 = () => {
             <div className="lg:col-span-1">
               <div className="bg-muted/50 rounded-lg p-6 space-y-6 sticky top-8">
                 <div>
-                  <h3 className="font-semibold mb-2 flex items-center gap-2">📍 Date and Location</h3>
-                  <p className="text-sm text-muted-foreground">Tufts University — Senior Capstone</p>
+                  <h3 className="font-semibold mb-2 flex items-center gap-2">
+                    📍 Date and Location
+                  </h3>
+                  <p className="text-sm text-muted-foreground">
+                    Tufts University — Senior Capstone
+                  </p>
                 </div>
 
                 <div>
                   <h3 className="font-semibold mb-2 flex items-center gap-2">👥 Team</h3>
-                  <p className="text-sm text-muted-foreground">Team project (Onshape-sponsored capstone)</p>
+                  <p className="text-sm text-muted-foreground">
+                    Team project (Onshape-sponsored capstone)
+                  </p>
                 </div>
 
                 <div>
                   <h3 className="font-semibold mb-2 flex items-center gap-2">⚙️ Skills</h3>
                   <p className="text-sm text-muted-foreground">
-                    Mechanical Design • CAD (Onshape) • Mechatronics • Rapid Prototyping •
-                    DFM • Controls • System Integration
+                    Mechanical Design • CAD (Onshape) • Mechatronics • Rapid Prototyping • DFM •
+                    Controls • System Integration
                   </p>
                 </div>
               </div>
             </div>
           </div>
 
-          {/* HERO IMAGE */}
+          {/* HERO IMAGE (UPDATED) */}
           <section className="mb-12">
             <div className="mb-8">
               <img
                 loading="lazy"
-                src={`${import.meta.env.BASE_URL}lovable-uploads/Penpal_main.png`}
-                alt="Onshape Pen Pal automated pen dispenser prototype"
+                src={img("penpal_front.png")}
+                alt="Onshape Pen Pal front view"
                 className="w-full rounded-lg shadow-md"
               />
               <p className="text-sm text-muted-foreground mt-2">
-                Prototype overview (add your best “hero” photo here)
+                Front view of the Pen Pal prototype
               </p>
             </div>
           </section>
@@ -81,68 +95,102 @@ const Project9 = () => {
           <section className="mb-12">
             <h2 className="heading-2 mb-8">Problem</h2>
             <p className="body-large text-muted-foreground leading-relaxed">
-              At conferences, distributing pens is a simple but powerful way to attract
-              students and educators. However, manual distribution is less engaging and
-              doesn’t reliably capture attendee information. The challenge was to design a
-              travel-friendly system that reliably dispenses one pen per submission while
-              creating a memorable, interactive demo.
+              At conferences, distributing pens is a simple but powerful way to attract students and
+              educators. However, manual distribution is less engaging and doesn’t reliably capture
+              attendee information. The challenge was to design a travel-friendly system that reliably
+              dispenses one pen per submission while creating a memorable, interactive demo.
             </p>
           </section>
 
           <section className="mb-12">
             <h2 className="heading-2 mb-8">Approach and System Design</h2>
 
+            {/* ROBOTIC ARM */}
             <div className="mb-12">
-              <h3 className="heading-3 mb-6">Mechanical Subsystems</h3>
+              <h3 className="heading-3 mb-6">Robotic Arm</h3>
               <p className="body-large text-muted-foreground leading-relaxed mb-8">
-                The device combines a rotating cylindrical pen dispenser with a delivery
-                mechanism to prevent jamming and ensure single-pen dispensing. A transparent
-                acrylic enclosure and a modular structural frame create a safe, engaging,
-                and portable system suitable for repeated travel and rapid setup.
-              </p>
-
-              <div className="grid md:grid-cols-2 gap-6 mb-8">
-                <div>
-                  <img
-                    src={asset("lovable-uploads/pen-pal-dispenser.png")}
-                    alt="Pen storage and dispensing mechanism"
-                    className="w-full rounded-lg shadow-md"
-                  />
-                  <p className="text-sm text-muted-foreground mt-2">
-                    Pen storage + dispensing module (add a close-up)
-                  </p>
-                </div>
-
-                <div>
-                  <img
-                    src={asset("lovable-uploads/pen-pal-frame.png")}
-                    alt="Structural frame and enclosure"
-                    className="w-full rounded-lg shadow-md"
-                  />
-                  <p className="text-sm text-muted-foreground mt-2">
-                    Structural frame + enclosure (add a photo showing portability)
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <div className="mb-12">
-              <h3 className="heading-3 mb-6">Data Pipeline & Controls</h3>
-              <p className="body-large text-muted-foreground leading-relaxed mb-8">
-                Users scan a QR code and complete a short form. Submissions are logged in a
-                cloud database, and a Raspberry Pi continuously monitors new entries to trigger
-                the dispensing sequence. This creates a seamless flow from attendee interaction
-                to automated delivery.
+                The robotic arm creates a “wow” factor during demos and provides a controlled,
+                repeatable motion sequence that helps guide/position a dispensed pen in a consistent
+                way. The design focused on reliable actuation, safe motion limits, and smooth operation
+                for repeated conference use.
               </p>
 
               <div className="mb-8">
                 <img
-                  src={asset("lovable-uploads/pen-pal-flow.png")}
-                  alt="QR to database to dispenser control flow"
+                  src={img("Penpal_arm.png")}
+                  alt="Pen Pal robotic arm"
                   className="w-full rounded-lg shadow-md"
+                  loading="lazy"
                 />
                 <p className="text-sm text-muted-foreground mt-2">
-                  System workflow (QR → form → database → Raspberry Pi → actuation)
+                  Robotic arm subsystem (Penpal_arm.png)
+                </p>
+              </div>
+            </div>
+
+            {/* STRUCTURAL FRAME */}
+            <div className="mb-12">
+              <h3 className="heading-3 mb-6">Structural Frame & Enclosure</h3>
+              <p className="body-large text-muted-foreground leading-relaxed mb-8">
+                The structural frame and enclosure were designed for portability, rigidity, and fast
+                setup at events. A protective clear enclosure keeps the mechanism visible for
+                engagement while improving user safety and protecting components during travel.
+              </p>
+
+              <div className="mb-8">
+                <img
+                  src={img("Penpal_Structure.png")}
+                  alt="Pen Pal structural frame and enclosure"
+                  className="w-full rounded-lg shadow-md"
+                  loading="lazy"
+                />
+                <p className="text-sm text-muted-foreground mt-2">
+                  Structure + enclosure (Penpal_Structure.png)
+                </p>
+              </div>
+            </div>
+
+            {/* DISPENSING MECHANISM */}
+            <div className="mb-12">
+              <h3 className="heading-3 mb-6">Pen Dispensing Mechanism</h3>
+              <p className="body-large text-muted-foreground leading-relaxed mb-8">
+                The dispensing mechanism was engineered to reliably deliver exactly one pen per cycle
+                and minimize jams/double-feeds. Iterations focused on geometry tuning at the exit path
+                and ensuring repeatable alignment between storage, release, and handoff.
+              </p>
+
+              <div className="mb-8">
+                <img
+                  src={img("Penpal_dispensing.png")}
+                  alt="Pen Pal pen dispensing mechanism"
+                  className="w-full rounded-lg shadow-md"
+                  loading="lazy"
+                />
+                <p className="text-sm text-muted-foreground mt-2">
+                  Dispensing mechanism (Penpal_dispensing.png)
+                </p>
+              </div>
+            </div>
+
+            {/* DATA PIPELINE & CONTROLS */}
+            <div className="mb-12">
+              <h3 className="heading-3 mb-6">Data Pipeline & Controls</h3>
+              <p className="body-large text-muted-foreground leading-relaxed mb-8">
+                Users scan a QR code and complete a short form. Submissions are logged in a cloud
+                database, and a Raspberry Pi continuously monitors new entries to trigger the
+                dispensing sequence. This creates a seamless flow from attendee interaction to
+                automated delivery.
+              </p>
+
+              <div className="mb-8">
+                <img
+                  src={img("Penpal_data.png")}
+                  alt="Pen Pal data pipeline diagram"
+                  className="w-full rounded-lg shadow-md"
+                  loading="lazy"
+                />
+                <p className="text-sm text-muted-foreground mt-2">
+                  Data pipeline & control flow (Penpal_data.png)
                 </p>
               </div>
             </div>
@@ -170,8 +218,8 @@ const Project9 = () => {
               <div>
                 <h4 className="font-semibold mb-2">System integration</h4>
                 <p className="text-muted-foreground">
-                  Integrated mechanical actuation with cloud-triggered events for a complete demo
-                  that combines hardware + data collection.
+                  Integrated mechanical actuation with cloud-triggered events for a complete demo that
+                  combines hardware + data collection.
                 </p>
               </div>
             </div>
@@ -183,16 +231,16 @@ const Project9 = () => {
               <div>
                 <h4 className="font-semibold mb-2">Reliable single-item dispensing</h4>
                 <p className="text-muted-foreground">
-                  Preventing jams and double-feeds required iterative testing and geometry tuning of the
-                  dispenser and exit path.
+                  Preventing jams and double-feeds required iterative testing and geometry tuning of
+                  the dispenser and exit path.
                 </p>
               </div>
 
               <div>
                 <h4 className="font-semibold mb-2">Robustness for repeated use</h4>
                 <p className="text-muted-foreground">
-                  Ensuring stability, alignment, and safe user interaction drove design decisions around
-                  the enclosure, frame rigidity, and fasteners.
+                  Ensuring stability, alignment, and safe user interaction drove design decisions
+                  around the enclosure, frame rigidity, and fasteners.
                 </p>
               </div>
 
@@ -208,11 +256,34 @@ const Project9 = () => {
 
           <section className="mb-12">
             <h2 className="heading-2 mb-8">Outcomes</h2>
-            <ul className="space-y-3 text-muted-foreground">
+
+            <ul className="space-y-3 text-muted-foreground mb-8">
               <li>• Demonstrated automated dispensing triggered by QR-form submissions</li>
               <li>• Delivered a conference-ready prototype emphasizing user engagement and visibility</li>
               <li>• Integrated mechanical design, electronics, and cloud-based data collection</li>
             </ul>
+
+            {/* EMBED VIDEO (GOOGLE DRIVE) */}
+            <div className="mb-8">
+              <h3 className="heading-3 mb-6">Demo Video</h3>
+              <div className="aspect-video rounded-lg overflow-hidden shadow-md border">
+                <iframe
+                  src={driveVideoPreview}
+                  title="Onshape Pen Pal Demo Video"
+                  className="w-full h-full"
+                  allow="autoplay"
+                />
+              </div>
+
+              <a
+                href="https://drive.google.com/file/d/14hQnnbwrV7qgeh8xqUDztozsEBcEErVG/view"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 text-primary hover:underline mt-3"
+              >
+                Open video in new tab
+              </a>
+            </div>
           </section>
 
           <section className="mb-12">
@@ -234,25 +305,25 @@ const Project9 = () => {
               end-to-end engineering and product thinking.
             </p>
           </section>
+
           <section className="mb-12">
             <h2 className="heading-2 mb-8">Project Documentation</h2>
-          
+
             <p className="body-large text-muted-foreground leading-relaxed mb-6">
-              The full design report below documents the mechanical design process,
-              system architecture, validation, and final outcomes of the Onshape Pen Pal
-              project.
+              The full design report below documents the mechanical design process, system architecture,
+              validation, and final outcomes of the Onshape Pen Pal project.
             </p>
-          
+
             <div className="w-full h-[80vh] rounded-lg overflow-hidden border shadow-md mb-4">
               <iframe
-                src={asset("lovable-uploads/onshape-pen-pal.pdf")}
+                src={file("onshape-pen-pal.pdf")}
                 title="Onshape Pen Pal Design Report"
                 className="w-full h-full"
               />
             </div>
-          
+
             <a
-              href={asset("lovable-uploads/onshape-pen-pal.pdf")}
+              href={file("onshape-pen-pal.pdf")}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 text-primary hover:underline"
